@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 960px;
+  margin: auto; }
+
+.b-article {
+  padding: 20px 10px;
+  margin: 0 10px 20px 10px;
+  font-size: 0.9rem; }
+  .b-article .b-article__thumb {
+    display: block;
+    margin: auto; }
+  .b-article .b-article__title {
+    text-align: center;
+    font-size: 1.3rem; }
+    .b-article .b-article__title a {
+      text-decoration: none;
+      color: #e36464; }
+  .b-article .b-article__btn {
+    background-color: #e6e6e6;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #737078;
+    display: block;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    text-decoration: none; }
+    .b-article .b-article__btn:hover {
+      background-color: #bdbdbd; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .b-article {
+    width: 50%;
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+    max-height: none;
+    overflow: none;
+    max-height: 500px;
+    overflow: hidden;
+    font-size: 1rem; }
+    .b-article:nth-child(odd) {
+      clear: both; } }
+@media (min-width: 992px) {
+  .b-article {
+    font-size: 1rem;
+    width: 33.33%;
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 20px 20px; }
+    .b-article:nth-child(4n) {
+      clear: both; } }
+
+/*# sourceMappingURL=styles.css.map */

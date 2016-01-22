@@ -1,0 +1,98 @@
+//Font colors
+$titleColor: #e36464;
+$titleFont: 1.3rem;
+$btnTxtColor: #737078;
+$btnBgColor: #e6e6e6;
+$btnBgHoverColor: #bdbdbd;
+
+@mixin mQueries($breakpoint) {
+
+  $mobile: "(max-width: 767px)";
+  $tablet: "(min-width: 768px) and (max-width: 991px)";
+  $desktop: "(min-width: 992px)";
+
+  @if $breakpoint == mobile {
+    @media #{$mobile} { @content; }
+  }
+  @else if $breakpoint == tablet {
+    @media #{$tablet} { @content; }
+  }
+  @else if $breakpoint == desktop {
+    @media #{$desktop}  { @content; }
+  }
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container{
+	max-width: 960px;
+	margin: auto; 
+}
+
+//Mobile styles
+
+.b-article {
+	padding: 20px 10px;
+	margin:0 10px 20px 10px;
+	font-size: 0.9rem;
+	.b-article__thumb{
+		display: block;
+		margin: auto
+	}
+	.b-article__title{
+		text-align: center;
+		font-size: $titleFont;
+		a {
+			text-decoration: none;
+			color: $titleColor;
+		}
+	}
+	.b-article__btn{
+		background-color: $btnBgColor;
+		width: 150px;
+		padding: 10px 0;
+		border-radius: 5px;
+		color: $btnTxtColor;
+		display: block;
+		text-align: center;
+		margin: auto;
+		cursor: pointer;
+		text-decoration: none;
+		&:hover{
+			background-color: $btnBgHoverColor;
+		}
+	}
+}
+
+//Media queries
+.b-article {
+	@include mQueries(tablet) 
+    {
+    	width: 50%;  
+     	float: left;
+     	margin-right: 0;
+     	margin-left: 0;
+     	max-height: none;
+     	overflow: none;
+     	max-height: 500px;
+		overflow: hidden; 
+		font-size: 1rem;
+     	&:nth-child(odd){
+     		clear: both;
+     	}
+    }
+    @include mQueries(desktop) 
+    {
+    	font-size: 1rem;
+    	width: 33.33%;  
+    	float: left;
+    	margin-right: 0;
+     	margin-left: 0;
+     	padding: 20px 20px;
+     	&:nth-child(4n){
+     		clear: both;
+     	}
+    }
+}
